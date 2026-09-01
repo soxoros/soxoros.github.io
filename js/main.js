@@ -142,16 +142,14 @@ const modalClose    = document.getElementById('modalClose');
 const modalEmailBtn = document.getElementById('modalEmailBtn');
 
 if (phoneModalBtn && phoneModal) {
-  const subject = encodeURIComponent('Telefonszám kérés — Magyar Virág portfólió');
-  const body    = encodeURIComponent(
-    'Kedves Virág!\n\n' +
-    'A portfóliódon keresztül találtam meg az elérhetőségedet.\n' +
-    'Szeretnék felvenni Veled a személyes kapcsolatot — kérlek, oszd meg velem telefonszámodat.\n\n' +
-    'Köszönöm!\n'
-  );
-  modalEmailBtn.href = `mailto:magyarvirag005@gmail.com?subject=${subject}&body=${body}`;
+  function updateModalEmailLink() {
+    const subject = encodeURIComponent(typeof i18n !== 'undefined' ? i18n.t('mailto_subject') : 'Telefonszám kérés — Magyar Virág portfólió');
+    const body    = encodeURIComponent(typeof i18n !== 'undefined' ? i18n.t('mailto_body') : '');
+    modalEmailBtn.href = `mailto:magyarvirag005@gmail.com?subject=${subject}&body=${body}`;
+  }
 
   function openModal() {
+    updateModalEmailLink();
     phoneModal.classList.add('open');
     document.body.style.overflow = 'hidden';
     modalClose.focus();

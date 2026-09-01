@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magyar Virág — Portfólió</title>
+  <title id="pageTitle">Magyar Virág — Portfólió</title>
   <link rel="stylesheet" href="css/style.css" />
   <script>
     (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
@@ -22,7 +22,7 @@
   </div>
 
   <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" type="button" aria-label="Vissza a tetejére">
+  <button class="back-to-top" id="backToTop" type="button" data-i18n-aria="aria_back_to_top" aria-label="Vissza a tetejére">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
 
@@ -35,17 +35,24 @@
         </div>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Főoldal</a></li>
-        <li><a href="research.html">Kutatás</a></li>
-        <li><a href="#contact">Kapcsolat</a></li>
+        <li><a href="index.html" class="active" data-i18n="nav_home">Főoldal</a></li>
+        <li><a href="research.html" data-i18n="nav_research">Kutatás</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Kapcsolat</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Téma váltása">
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
-      <button class="nav-burger" id="burger" aria-label="Menü">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <div class="lang-switch" id="langSwitch">
+          <button type="button" data-lang="hu">HU</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="de">DE</button>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" data-i18n-aria="aria_theme_toggle" aria-label="Téma váltása">
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <button class="nav-burger" id="burger" type="button" data-i18n-aria="aria_menu" aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -87,38 +94,38 @@
           </div>
         </div>
         <div class="hero-doc-btns">
-          <a href="doc/Magyar Virág CV.docx" download class="btn-doc">
+          <a href="doc/Magyar Virág CV.docx" download class="btn-doc" data-doc="cv">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5z" fill="currentColor"/><path d="M4 18h16v2H4v-2z" fill="currentColor"/></svg>
-            Önéletrajz
+            <span data-i18n="doc_cv_short">Önéletrajz</span>
           </a>
-          <a href="doc/Magyar_Virag_ML.docx" download class="btn-doc">
+          <a href="doc/Magyar Virág ML.docx" download class="btn-doc" data-doc="ml">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5z" fill="currentColor"/><path d="M4 18h16v2H4v-2z" fill="currentColor"/></svg>
-            Motivációs levél
+            <span data-i18n="doc_ml_short">Motivációs levél</span>
           </a>
         </div>
       </div>
       <div class="hero-text-col">
         <h1 class="hero-name">Magyar<br><em>Virág</em></h1>
-        <p class="hero-motto">„A részletekben értem meg az embert.”</p>
-        <p class="hero-role">Pszichológia hallgató &nbsp;·&nbsp; Debreceni Egyetem<br>·&nbsp; Diákmunka pályázó</p>
-        <p class="hero-bio">
-          Precíz, elemző és empatikus gondolkodású pszichológia hallgató. 
-          Tizenhárom év versenyszerű szertornázás megtanított arra, hogy az eredmény 
-          kitartó, fegyelmezett munkából születik. Ugyanezt az értékrendet viszem 
+        <p class="hero-motto" data-i18n="hero_motto">„A részletekben értem meg az embert.”</p>
+        <p class="hero-role" data-i18n="hero_role">Pszichológia hallgató &nbsp;·&nbsp; Debreceni Egyetem<br>·&nbsp; Diákmunka pályázó</p>
+        <p class="hero-bio" data-i18n="hero_bio">
+          Precíz, elemző és empatikus gondolkodású pszichológia hallgató.
+          Tizenhárom év versenyszerű szertornázás megtanított arra, hogy az eredmény
+          kitartó, fegyelmezett munkából születik. Ugyanezt az értékrendet viszem
           a tudományba és a mindennapjaimba.
         </p>
         <div class="hero-pills">
-          <span class="pill">C1 Angol</span>
-          <span class="pill">Magyar bajnok</span>
-          <span class="pill">Elemző</span>
-          <span class="pill">Precíz</span>
-          <span class="pill">Empatikus</span>
+          <span class="pill" data-i18n="pill_english">C1 Angol</span>
+          <span class="pill" data-i18n="pill_champion">Magyar bajnok</span>
+          <span class="pill" data-i18n="pill_analytical">Elemző</span>
+          <span class="pill" data-i18n="pill_precise">Precíz</span>
+          <span class="pill" data-i18n="pill_empathetic">Empatikus</span>
         </div>
-        <a href="research.html" class="btn-primary">Kutatási portfólió →</a>
+        <a href="research.html" class="btn-primary" data-i18n="hero_cta">Kutatási portfólió →</a>
       </div>
     </div>
     <div class="hero-scroll">
-      <span>Görgess</span>
+      <span data-i18n="hero_scroll">Görgess</span>
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -126,30 +133,30 @@
   <!-- TANULMÁNYOK & EREDMÉNYEK -->
   <section class="section timeline-section" id="education">
     <div class="container">
-      <div class="section-label">Háttér</div>
-      <h2 class="section-title">Tanulmányok &<br><em>Eredmények</em></h2>
+      <div class="section-label" data-i18n="edu_label">Háttér</div>
+      <h2 class="section-title" data-i18n="edu_title">Tanulmányok &<br><em>Eredmények</em></h2>
       <div class="tl-grid">
         <div class="tl-col">
-          <h3 class="tl-col-title">Oktatás</h3>
+          <h3 class="tl-col-title" data-i18n="edu_col_education">Oktatás</h3>
           <div class="tl-item">
             <div class="tl-year">2024 –</div>
             <div class="tl-body">
               <strong>Debreceni Egyetem BTK</strong>
-              <span>Pszichológia BA </span>
+              <span data-i18n="edu_item1_sub">Pszichológia BA </span>
             </div>
           </div>
           <div class="tl-item">
             <div class="tl-year">2018–24</div>
             <div class="tl-body">
               <strong>Diósgyőri Gimnázium</strong>
-              <span>Gimnáziumi érettségi · emelt angol, történelem</span>
+              <span data-i18n="edu_item2_sub">Gimnáziumi érettségi · emelt angol, történelem</span>
             </div>
           </div>
           <div class="tl-item">
             <div class="tl-year">2016–17</div>
             <div class="tl-body">
               <strong>Fabula Művészeti Iskola</strong>
-              <span>Képzőművészeti képzés</span>
+              <span data-i18n="edu_item3_sub">Képzőművészeti képzés</span>
             </div>
           </div>
           <div class="tl-item">
@@ -160,44 +167,44 @@
           </div>
         </div>
         <div class="tl-col">
-          <h3 class="tl-col-title">Eredmények</h3>
+          <h3 class="tl-col-title" data-i18n="edu_col_achievements">Eredmények</h3>
           <div class="tl-item achievement">
             <div class="tl-year">2024</div>
             <div class="tl-body">
-              <strong>C1 Felsőfokú angol</strong>
-              <span>Állami nyelvvizsga</span>
+              <strong data-i18n="ach_item1_title">C1 Felsőfokú angol</strong>
+              <span data-i18n="ach_item1_sub">Állami nyelvvizsga</span>
             </div>
           </div>
           <div class="tl-item achievement">
             <div class="tl-year">2024</div>
             <div class="tl-body">
-              <strong>Emelt szintű történelem érettségi</strong>
+              <strong data-i18n="ach_item2_title">Emelt szintű történelem érettségi</strong>
             </div>
           </div>
           <div class="tl-item achievement">
             <div class="tl-year">2023</div>
             <div class="tl-body">
-              <strong>Emelt szintű angol érettségi (B2)</strong>
+              <strong data-i18n="ach_item3_title">Emelt szintű angol érettségi (B2)</strong>
             </div>
           </div>
           <div class="tl-item achievement gold">
             <div class="tl-year">2019</div>
             <div class="tl-body">
-              <strong>🥇 Magyar Bajnok — Gerenda</strong>
-              <span>Ifi II. osztály, Női torna</span>
+              <strong data-i18n="ach_item4_title">🥇 Magyar Bajnok — Gerenda</strong>
+              <span data-i18n="ach_item4_sub">Ifi II. osztály, Női torna</span>
             </div>
           </div>
           <div class="tl-item achievement gold">
             <div class="tl-year">2018</div>
             <div class="tl-body">
-              <strong>🥇 Magyar Bajnok — Talaj</strong>
-              <span>Serdülő II. osztály, Női torna</span>
+              <strong data-i18n="ach_item5_title">🥇 Magyar Bajnok — Talaj</strong>
+              <span data-i18n="ach_item5_sub">Serdülő II. osztály, Női torna</span>
             </div>
           </div>
           <div class="tl-item">
             <div class="tl-year">2019</div>
             <div class="tl-body">
-              <strong>Jó tanuló – Jó sportoló díj</strong>
+              <strong data-i18n="ach_item6_title">Jó tanuló – Jó sportoló díj</strong>
             </div>
           </div>
         </div>
@@ -208,28 +215,28 @@
   <!-- KOMPETENCIÁK -->
   <section class="section skills-section" id="skills">
     <div class="container">
-      <div class="section-label">Kompetenciák</div>
-      <h2 class="section-title">Képességek &<br><em>Készségek</em></h2>
+      <div class="section-label" data-i18n="skills_label">Kompetenciák</div>
+      <h2 class="section-title" data-i18n="skills_title">Képességek &<br><em>Készségek</em></h2>
       <div class="skills-grid">
         <div class="skill-block">
           <div class="skill-icon">◈</div>
-          <h4>Elemzés & Precizitás</h4>
-          <p>Analitikus gondolkodásmód, rendszerező készség, részletorientált munkavégzés. Pszichológiai kutatáshoz és adatértelmezéshez is alkalmazható.</p>
+          <h4 data-i18n="skill1_title">Elemzés & Precizitás</h4>
+          <p data-i18n="skill1_body">Analitikus gondolkodásmód, rendszerező készség, részletorientált munkavégzés. Pszichológiai kutatáshoz és adatértelmezéshez is alkalmazható.</p>
         </div>
         <div class="skill-block">
           <div class="skill-icon">◉</div>
-          <h4>Empátia & Kommunikáció</h4>
-          <p>Figyelmes hallgatóság, megértő, illemtudó kommunikáció. Interperszonális kapcsolatokban mély empátia, emberi helyzetekben türelmes jelenlét.</p>
+          <h4 data-i18n="skill2_title">Empátia & Kommunikáció</h4>
+          <p data-i18n="skill2_body">Figyelmes hallgatóság, megértő, illemtudó kommunikáció. Interperszonális kapcsolatokban mély empátia, emberi helyzetekben türelmes jelenlét.</p>
         </div>
         <div class="skill-block">
           <div class="skill-icon">◇</div>
-          <h4>Kitartás & Fegyelem</h4>
-          <p>13 év versenyszerű sport megalapozta a munkamorált: hosszú távú célokra is képes fókuszálni, nem riad vissza az ismétléstől és az aprómunkától.</p>
+          <h4 data-i18n="skill3_title">Kitartás & Fegyelem</h4>
+          <p data-i18n="skill3_body">13 év versenyszerű sport megalapozta a munkamorált: hosszú távú célokra is képes fókuszálni, nem riad vissza az ismétléstől és az aprómunkától.</p>
         </div>
         <div class="skill-block">
           <div class="skill-icon">◎</div>
-          <h4>Nyelvek</h4>
-          <p>Magyar anyanyelvű. Angol C1 szintű felsőfokú, tudományos szövegek olvasása és írása szintjén is. Aktívan fejleszti szakmai szókincsét.</p>
+          <h4 data-i18n="skill4_title">Nyelvek</h4>
+          <p data-i18n="skill4_body">Magyar anyanyelvű. Angol C1 szintű felsőfokú, tudományos szövegek olvasása és írása szintjén is. Aktívan fejleszti szakmai szókincsét.</p>
         </div>
       </div>
     </div>
@@ -307,20 +314,20 @@
   <!-- DOKUMENTUMOK -->
   <section class="section docs-section" id="docs">
     <div class="container">
-      <div class="section-label">Dokumentumok</div>
-      <h2 class="section-title">Letölthető<br><em>Anyagok</em></h2>
+      <div class="section-label" data-i18n="docs_label">Dokumentumok</div>
+      <h2 class="section-title" data-i18n="docs_title">Letölthető<br><em>Anyagok</em></h2>
       <div class="docs-grid">
         <div class="doc-card">
           <div class="doc-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 7h8M8 11h8M8 15h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div class="doc-info">
-            <h4>Szakmai önéletrajz</h4>
-            <p>Teljes körű CV — tanulmányok, eredmények</p>
+            <h4 data-i18n="doccard1_title">Szakmai önéletrajz</h4>
+            <p data-i18n="doccard1_desc">Teljes körű CV — tanulmányok, eredmények</p>
           </div>
-          <a href="doc/Magyar Virág CV.docx" download class="btn-download">
+          <a href="doc/Magyar Virág CV.docx" download class="btn-download" data-doc="cv">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5z" fill="currentColor"/><path d="M4 18h16v2H4v-2z" fill="currentColor"/></svg>
-            Letöltés
+            <span data-i18n="doc_download">Letöltés</span>
           </a>
         </div>
         <div class="doc-card">
@@ -328,12 +335,12 @@
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 7h8M8 11h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 15l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="doc-info">
-            <h4>Motivációs levél</h4>
-            <p>Általános sablon — diákmunka pályázatokhoz testre szabható</p>
+            <h4 data-i18n="doccard2_title">Motivációs levél</h4>
+            <p data-i18n="doccard2_desc">Általános sablon — diákmunka pályázatokhoz testre szabható</p>
           </div>
-          <a href="doc/Magyar_Virag_ML.docx" download class="btn-download">
+          <a href="doc/Magyar Virág ML.docx" download class="btn-download" data-doc="ml">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5z" fill="currentColor"/><path d="M4 18h16v2H4v-2z" fill="currentColor"/></svg>
-            Letöltés
+            <span data-i18n="doc_download">Letöltés</span>
           </a>
         </div>
         <div class="doc-card">
@@ -341,10 +348,10 @@
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div class="doc-info">
-            <h4>Kutatási napló</h4>
-            <p>Pszichológiai kutatási részvétel dokumentációja — amint elkészül publikálható anyag frissülni fog</p>
+            <h4 data-i18n="doccard3_title">Kutatási napló</h4>
+            <p data-i18n="doccard3_desc">Pszichológiai kutatási részvétel dokumentációja — amint elkészül publikálható anyag frissülni fog</p>
           </div>
-          <a href="research.html" class="btn-download outline">
+          <a href="research.html" class="btn-download outline" data-i18n="doc_view">
             Megtekintés →
           </a>
         </div>
@@ -358,8 +365,8 @@
       <div class="hero-orb orb1" style="opacity:.35"></div>
     </div>
     <div class="container contact-inner">
-      <div class="section-label light">Kapcsolat</div>
-      <h2 class="section-title light">Lépj kapcsolatba<br><em>velem</em></h2>
+      <div class="section-label light" data-i18n="contact_label">Kapcsolat</div>
+      <h2 class="section-title light" data-i18n="contact_title">Lépj kapcsolatba<br><em>velem</em></h2>
       <div class="contact-grid">
         <a href="mailto:magyarvirag005@gmail.com" class="contact-card">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -367,7 +374,7 @@
         </a>
         <button class="contact-card" id="phoneModalBtn" type="button">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8A14.4 14.4 0 0013.2 17.4l2.4-2.4 3.6 2.1L18 21C12 21 3 12 3 6l3.9-1.2 2.1 3.6-2.4 2.4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          <span>Telefonszám kérése</span>
+          <span data-i18n="contact_phone_btn">Telefonszám kérése</span>
         </button>
       </div>
     </div>
@@ -388,27 +395,28 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
-      <p class="footer-copy">© 2026 · Magyar Virág · Portfólió</p>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 · Magyar Virág · Portfólió</p>
     </div>
   </footer>
 
   <!-- PHONE REQUEST MODAL -->
   <div class="modal-overlay" id="phoneModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-box">
-      <button class="modal-close" id="modalClose" type="button" aria-label="Bezárás">✕</button>
+      <button class="modal-close" id="modalClose" type="button" data-i18n-aria="aria_modal_close" aria-label="Bezárás">✕</button>
       <div class="modal-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8A14.4 14.4 0 0013.2 17.4l2.4-2.4 3.6 2.1L18 21C12 21 3 12 3 6l3.9-1.2 2.1 3.6-2.4 2.4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
       </div>
-      <h2 class="modal-title" id="modalTitle">Telefonszám<br><em>kérése</em></h2>
-      <p class="modal-desc">A telefonszámomat adatvédelmi okokból nem tüntetem fel nyilvánosan. Küldj egy rövid emailt, és haladéktalanul visszajelzek!</p>
+      <h2 class="modal-title" id="modalTitle" data-i18n="modal_title">Telefonszám<br><em>kérése</em></h2>
+      <p class="modal-desc" data-i18n="modal_desc">A telefonszámomat adatvédelmi okokból nem tüntetem fel nyilvánosan. Küldj egy rövid emailt, és haladéktalanul visszajelzek!</p>
       <a id="modalEmailBtn" class="modal-btn" href="#">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5"/></svg>
-        Email küldése
+        <span data-i18n="modal_email_btn">Email küldése</span>
       </a>
-      <p class="modal-note">Az emailt a saját leveleződ nyitja meg — adataid biztonságban maradnak.</p>
+      <p class="modal-note" data-i18n="modal_note">Az emailt a saját leveleződ nyitja meg — adataid biztonságban maradnak.</p>
     </div>
   </div>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
